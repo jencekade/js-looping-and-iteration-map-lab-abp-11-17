@@ -7,15 +7,22 @@ function lowerCaseDrivers(drivers) {
 }
 
 function nameToAttributes(drivers) {
-  let namedToAtrributes1 = drivers.map(function (eachDrivers){
-
+  let namedToAtrributes1 = drivers.map(function(eachDrivers) {
+    //I need to somehow split the name into different array index
+    let fullName = eachDrivers.split(" ");
+    //then try to put each index into object
+    return {
+      firstName: fullName[0],
+      lastName: fullName[1]
+    };
   });
-  return namedToAttributes1;
+  return namedToAtrributes1;
 }
 
 function attributesToPhrase(drivers) {
-  let attributedToPhrase1 = drivers.map(function (eachDriver) {
+  let attributedToPhrase1 = drivers.map(function(eachDriver) {
     return `${eachDriver.name} is from ${eachDriver.hometown}`;
+    //return eachDriver.name + " is from " + eachDriver.hometown;
   });
   return attributedToPhrase1;
 }
